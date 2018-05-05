@@ -43,7 +43,7 @@ var questions =
             correctAnswer: 'Justice League',
         },
         {
-            question: 'Who sang the songs “Crazy in Love” and “Drunk in Love',
+            question: 'Who sang the songs “Crazy in Love” and “Drunk in Love?"',
             answer1: 'Pink',
             answer2: 'Rihanna',
             answer3: 'Beyoncé',
@@ -59,7 +59,15 @@ function displayQuestion() {
     function decrement() {
         time--;
         $('.timer').text(time);
-        //if statement checking if time is 0
+
+        //Stop timer once it reaches 0s and alert user is out of time
+        if (time <= 0) {
+            clearInterval(intervalId);
+            alert('Out of time!')
+
+            //Refresh page
+            location.reload();
+        }
     };
 
     //Display question object
@@ -76,9 +84,11 @@ function correct() {
     questionCounter++;
     clearInterval(intervalId);
     if (questionCounter == questions.length) {
+        $('#question').text('');
         $('.answer1').text('Correct Answer: ' + correctAnswers);
         $('.answer2').text('Wrong Answer: ' + wrongAnswers);
-        $('.answer3').text('UnAnswered: ' + unAnswered);
+        $('.answer3').text('No Answer: ' + unAnswered);
+        $('.answer4').text('');
 
     } else {
         displayQuestion();
@@ -90,17 +100,15 @@ function wrong() {
     questionCounter++;
     clearInterval(intervalId);
     if (questionCounter == questions.length) {
+        $('#question').text('');
         $('.answer1').text('Correct Answer: ' + correctAnswers);
         $('.answer2').text('Wrong Answer: ' + wrongAnswers);
         $('.answer3').text('UnAnswered: ' + unAnswered);
+        $('.answer4').text('');
 
     } else {
         displayQuestion();
     }
-}
-
-function stopClock() {
-    clearInterval(intervalId);
 }
 
 //Answer buttons click handler
@@ -125,7 +133,6 @@ $(document).ready(function () {
         //timerText to show button
         $('.timerText').show();
         displayQuestion();
-
     })
 })
 
