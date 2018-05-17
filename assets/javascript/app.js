@@ -16,7 +16,8 @@ var questions =
             answer2: 'Harry Potter',
             answer3: 'The Lord of the Rings',
             answer4: 'Twilight',
-            correctAnswer: 'Harry Potter'
+            correctAnswer: 'Harry Potter',
+            image: "assets/images/harrypotter.jpg",
         },
         {
             question: 'What is the name of the first Hunger Games movie?',
@@ -24,7 +25,8 @@ var questions =
             answer2: 'The Hunger Games: Catching Fire',
             answer3: 'The Hunger Games: Mockingjay – Part 1',
             answer4: 'The Hunger Games: Catching Fire ',
-            correctAnswer: 'The Hunger Games'
+            correctAnswer: 'The Hunger Games',
+            image: "assets/images/hungergames.jpg",
         },
         {
             question: 'Kate Winslet played Rose in Titanic, but who was the leading man?',
@@ -32,7 +34,8 @@ var questions =
             answer2: 'Tom Cruise',
             answer3: 'Brad Pitt',
             answer4: 'George Clooney',
-            correctAnswer: 'Leonardo DiCaprio'
+            correctAnswer: 'Leonardo DiCaprio',
+            image: "assets/images/leonardo-dicaprio.jpg",
         },
         {
             question: 'What’s the name of the latest DC Extended Universe movie, starring Ben Affleck, Gal Gadot, and Henry Cavill?',
@@ -41,6 +44,7 @@ var questions =
             answer3: 'Batman Begins',
             answer4: 'Avengers: Infinity War',
             correctAnswer: 'Justice League',
+            image: "assets/images/justiceleague.jpg",
         },
         {
             question: 'Who sang the songs “Crazy in Love” and “Drunk in Love?"',
@@ -48,7 +52,8 @@ var questions =
             answer2: 'Rihanna',
             answer3: 'Beyoncé',
             answer4: 'Justin Bieber',
-            correctAnswer: 'Beyoncé'
+            correctAnswer: 'Beyoncé',
+            image: "assets/images/beyonce",
         }
     ]
 
@@ -78,7 +83,7 @@ function displayQuestion() {
     $('.answer3').text(questions[questionCounter].answer3);
     $('.answer4').text(questions[questionCounter].answer4);
 }
-
+//Check if answer is correct
 function correct() {
     correctAnswers++;
     questionCounter++;
@@ -94,7 +99,7 @@ function correct() {
         displayQuestion();
     }
 }
-
+//Check if answer is wrong
 function wrong() {
     wrongAnswers++;
     questionCounter++;
