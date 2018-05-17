@@ -116,7 +116,7 @@ function wrong() {
     }
 }
 
-//Answer buttons click handler
+//Answer button click handler
 $('.button').click(function () {
     //this references button clicked on
     if ($(this).text() == questions[questionCounter].correctAnswer) {
